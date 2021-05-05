@@ -24,6 +24,13 @@ class UserService {
 
         return newUser;
     }
+
+    async findByEmail(email: string) {
+        const user = await this.usersRepository.findOne({
+            email,
+        });
+        return user;
+    }
 }
 
 export { UserService }
